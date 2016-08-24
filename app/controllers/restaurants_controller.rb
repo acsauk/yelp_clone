@@ -4,6 +4,7 @@ class RestaurantsController < ApplicationController
   end
 
   def new
+    @restaurant = Restaurant.new
   end
 
   def create
@@ -12,7 +13,7 @@ class RestaurantsController < ApplicationController
       redirect_to restaurants_path
     else
       render 'new'
-    end 
+    end
   end
 
   def show
