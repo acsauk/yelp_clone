@@ -35,4 +35,11 @@ feature 'reviewing' do
     expect(page).to have_content 'Cannot delete someone else\'s review'
     expect(page).to have_content 'so so'
   end
+
+  scenario 'displays an average rating for all reviews' do
+    sign_out
+    sign_up(email: 'another_user@gmail.com')
+    leave_review('Great!', '5')
+    expect(page).to have_content('Average rating: 4')
+  end
 end

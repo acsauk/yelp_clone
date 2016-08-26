@@ -4,6 +4,7 @@
     = link_to restaurant.name, restaurant_path(restaurant)
     %br
     %p= restaurant.description
+    %p Average rating: #{restaurant.average_rating.to_i}
     = link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant)
     %br
     = link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete
